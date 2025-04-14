@@ -44,7 +44,6 @@
             border-radius: 10px;
             background-color: rgba(0, 0, 0, 0.534);
             color: #ffffff;
-
             padding: 10px 20px;
             margin: 0 10px;
             font-size: 16px;
@@ -67,86 +66,85 @@
             cursor: not-allowed;
         }
         /* Loader Animation Styles */
-.loader-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: opacity 0.5s ease;
-}
+        .loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
 
-.loader {
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #ff0000;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 1s linear infinite;
-}
+        .loader {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #ff0000;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
 
-.loader-hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-
+        .loader-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
     </style>
-     <script>
-            // JavaScript function to handle navigation
-            function navigate(pageId) {
-                // Hide all pages
-                const pages = document.querySelectorAll('.page');
-                pages.forEach(page => page.classList.remove('active'));
-        
-                // Show the selected page
-                document.getElementById(pageId).classList.add('active');
-            }
-        
-            // Optional: Handle navigation using URL hash (e.g., #about)
-            window.addEventListener('hashchange', () => {
-                const pageId = location.hash.substring(1) || 'home';  // Default to 'home'
-                navigate(pageId);
+    <script>
+        // JavaScript function to handle navigation
+        function navigate(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+    
+            // Show the selected page
+            document.getElementById(pageId).classList.add('active');
+        }
+    
+        // Optional: Handle navigation using URL hash (e.g., #about)
+        window.addEventListener('hashchange', () => {
+            const pageId = location.hash.substring(1) || 'home';  // Default to 'home'
+            navigate(pageId);
+        });
+    
+        // Load the correct page on initial load based on the URL hash
+        window.addEventListener('load', () => {
+            const pageId = location.hash.substring(1) || 'home';
+            navigate(pageId);
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+            const loader = document.querySelector(".loader-container");
+            window.addEventListener("load", function() {
+                setTimeout(() => {
+                    loader.classList.add("loader-hidden");
+                }, 500); // Delay for smoother transition
             });
-        
-            // Load the correct page on initial load based on the URL hash
-            window.addEventListener('load', () => {
-                const pageId = location.hash.substring(1) || 'home';
-                navigate(pageId);
-            });
-            document.addEventListener("DOMContentLoaded", function() {
-    const loader = document.querySelector(".loader-container");
-    window.addEventListener("load", function() {
-        setTimeout(() => {
-            loader.classList.add("loader-hidden");
-        }, 500); // Delay for smoother transition
-    });
-});
+        });
     </script>
-        <script>
-            function showSection(sectionId) {
-                document.querySelectorAll('.section').forEach(div => {
-                    div.classList.remove('active');
-                });
-                document.getElementById(sectionId).classList.add('active');
-            }
-        </script>
-
-    
-    
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(div => {
+                div.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
     <link rel="stylesheet" href="home.css">
     <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
 </head>
 <body>
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
     <nav id="nav">
         <script>
             function goToHome() {
@@ -157,31 +155,13 @@
             }
         </script>
         <img class="logo" src="photos/Untitled.jpg" alt="" onclick="goToHome()">
-        <P class="head">RLS</P>
+        <p class="head">RLS</p>
         <span onclick="closenav()"><i class="fa-solid fa-xmark"></i></span>
         <button onclick="showSection('home')"><i class="fa-solid fa-house"></i><p class="nav">Home</p></button><br>
         <button onclick="showSection('about')"><i class="fa-solid fa-newspaper"></i><p class="nav">News</p></button><br>
         <button onclick="showSection('Images')"><i class="fa-solid fa-image"></i><p class="nav">Gallery</p></button><br>
         <button onclick="showSection('address')"><i class="fa-solid fa-address-book"></i><p class="nav">Contact</p></button><br>
     </nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
     <div class="but">
         <button type="button" onclick="announceOpen()" class="openB" id="openB"><i class="fa-solid fa-bell"></i></button>
         <button type="button" onclick="announceClose()" class="closeB" id="closeB"><i class="fa-solid fa-xmark"></i></button>    
@@ -202,10 +182,8 @@
                 nav.style.display = "block";
             }
         </script>
-        </div>
-
+    </div>
     <div id="home" class="section">
- 
         <div id="text" class="text">
             <img class="logo" src="photos/Untitled.jpg" alt="">
             <h1 class="head">RWAMAGANA LEADERS' SCHOOL</h1><br>
@@ -220,134 +198,107 @@
                     closeB.style.display = "none";
                     openB.style.display = "block";
                 }
-
                 function announceOpen(){
                     announcement.style.display = "block";
                     openB.style.display = "none";
                     closeB.style.display = "block";
                 }
             </script>
-           <iframe width="888" height="412" src="https://www.youtube.com/embed/t_NyA6Qy0so" title="Rwamagana Leaders’ School" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="888" height="412" src="https://www.youtube.com/embed/t_NyA6Qy0so" title="Rwamagana Leaders’ School" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-    
-       <div id="menu" class="menu">
-        <div class="img">
-            <a href="enterntainment.html"><button class="button1" type="button">Activity</button></a>
+        <div id="menu" class="menu">
+            <div class="img">
+                <a href="enterntainment.html"><button class="button1" type="button">Activity</button></a>
+            </div>
+            <div class="img1">
+                <a href="sports.html"><button class="button2" type="button" onclick="entButton()">Sports</button></a>
+            </div>
+            <div class="img2">
+                <a href="sponser.html"><button class="button3" type="button" onclick="entButton()">Sponsored</button></a>
+            </div>
+            <div class="img3">
+                <a href="prefects.html"><button class="button4" type="button" onclick="entButton()">Prefects</button></a>
+            </div>
+            <div class="img4">
+                <button class="button5" type="button" onclick="entButton()">Staff Members</button>
+            </div>
+            <div class="img5">
+                <a href="Our story.html"><button class="button6" type="button">Our story</button></a>
+            </div>
         </div>
-    
-        <div class="img1">
-            <a href="sports.html"><button class="button2" type="button" onclick="entButton()">Sports</button></a>
+        <div class="content_combination">
+            <h1>Classes</h1>
+            <div class="olevel">
+                <h2>Ordinary level</h2>
+                <div class="s">
+                    <div class="comb2">
+                        <h2 class="h">S1</h2>
+                    </div>
+                </div>
+                <div class="s">
+                    <div class="comb2">
+                        <h2 class="h">S2</h2>
+                    </div>
+                </div>
+                <div class="s">
+                    <div class="comb2">
+                        <h2 class="h">S3</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="alevel">
+                <h2>Advanced level Combination</h2>
+                <div class="comb11">
+                    <div class="comb1">
+                        <h2 class="h">MPC  <br> <h4>S4.S5.S6</h4></h2><br>
+                        <p class="pa">Mathematics - Physics - Computer Sciene</p>
+                    </div>
+                </div>
+                <div class="comb22">
+                    <div class="comb1">
+                        <h2 class="h">MPG <br> <h4>S4.S5.S6</h4></h2><br>
+                        <p class="pa">Mathematics - Physics - Geography</p>
+                    </div>
+                </div>
+                <div class="comb33">
+                    <div class="comb1">
+                        <h2 class="h">PCM <br> <h4>S4.S5.S6</h4></h2><br>
+                        <p class="pa">Physics - Chemistry - Mathematics</p>
+                    </div>
+                </div>
+                <div class="comb44">
+                    <div class="comb1">
+                        <h2 class="h">PCB <br> <h4>S4.S5.S6</h4></h2><br>
+                        <p class="pa">Physics - Chemistry - Biology</p>
+                    </div>
+                </div>
+                <div class="comb55">
+                    <div class="comb1">
+                        <h2 class="h">MCE <br> <h4>S4.S5.S6</h4></h2><br>
+                        <p class="pa">Mathematics - Computer Science - Economy</p>
+                    </div>
+                </div>
+                <div class="comb66">
+                    <div class="comb1">
+                        <h2 class="h">MEG <br> <h4>S4.S5.S6</h4></h2><br>
+                        <p class="pa">Mathematics - Economy - Geography</p>
+                    </div>
+                </div>
+                <div class="comb77">
+                    <div class="comb1">
+                        <h2 class="h">HGL <br> <h4>S4.S5.S6</h4></h2><br>
+                        <p class="pa">History - Geography - Literature</p>
+                    </div>
+                </div>
+                <div class="comb88">
+                    <div class="comb1">
+                        <h2 class="h">MCB <br> <h4>S4.S5.S6</h4></h2><br>
+                        <p class="pa">Mathematics - Chemistry - Biology</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    
-        <div class="img2">
-            <a href="sponser.html"><button class="button3" type="button" onclick="entButton()">Sponsored</button></a>
-        </div>
-    
-        <div class="img3">
-            <a href="prefects.html"><button class="button4" type="button" onclick="entButton()">Prefects</button></a>
-        </div>
-    
-        <div class="img4">
-            <button class="button5" type="button" onclick="entButton()">Staff Members</button>
-        </div>
-        <div class="img5">
-            <a href="Our story.html"><button class="button6" type="button">Our story</button></a>
-        </div>
-    
-       </div>
-       <div class="content_combination">
-           <h1>Classes</h1>
-           <div class="olevel">
-             <h2>Ordinary level</h2>
-             <div class="s">
-                <div class="comb2">
-                <h2 class="h">S1</h2>
-                </div>
-             </div>
-             <div class="s">
-                <div class="comb2">
-                <h2 class="h">S2</h2>
-                </div>
-             </div>
-             <div class="s">
-                <div class="comb2">
-                <h2 class="h">S3</h2>
-                </div>
-             </div>
-           </div>
-           <div class="alevel">
-             <h2>Advanced level Combination</h2>
-             <div class="comb11">
-                <div class="comb1">
-                <h2 class="h">MPC  <br> <h4>S4.S5.S6</h4></h2><br>
-                <p class="pa">Mathematics - Physics - Computer Sciene</p>
-                </div>
-             </div>
-             <div class="comb22">
-                <div class="comb1">
-                <h2 class="h">MPG <br> <h4>S4.S5.S6</h4></h2><br>
-                <p class="pa">Mathematics - Physics - Geography</p>
-                </div>
-             </div>
-             <div class="comb33">
-                <div class="comb1">
-                <h2 class="h">PCM <br> <h4>S4.S5.S6</h4></h2><br>
-                <p class="pa">Physics - Chemistry - Mathematics</p>
-                </div>
-             </div>
-             <div class="comb44">
-                <div class="comb1">
-                <h2 class="h">PCB <br> <h4>S4.S5.S6</h4></h2><br>
-                <p class="pa">Physics - Chemistry - Biology</p>
-                </div>
-             </div>
-             <div class="comb55">
-                <div class="comb1">
-                <h2 class="h">MCE <br> <h4>S4.S5.S6</h4></h2><br>
-                <p class="pa">Mathematics - Computer Science - Economy</p>
-                </div>
-             </div>
-             <div class="comb66">
-                <div class="comb1">
-                <h2 class="h">MEG <br> <h4>S4.S5.S6</h4></h2><br>
-                <p class="pa">Mathematics - Economy - Geography</p>
-                </div>
-             </div>
-             <div class="comb77">
-                <div class="comb1">
-                <h2 class="h">HGL <br> <h4>S4.S5.S6</h4></h2><br>
-                <p class="pa">History - Geography - Literature</p>
-                </div>
-             </div>
-             <div class="comb88">
-                <div class="comb1">
-                <h2 class="h">MCB <br> <h4>S4.S5.S6</h4></h2><br>
-                <p class="pa">Mathematics - Chemistry - Biology</p>
-                </div>
-             </div>
-           </div>
-       </div>
-        
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <div id="about" class="section">
         <div class="text">
             <h1 class="head">RWAMAGANA LEADERS' SCHOOL</h1>
@@ -370,7 +321,6 @@
                         <ol class="ol">
                             <li class="P">Our vision </li>
                             <button class="dropdown-btn" onclick="toggleDropdown()"> <i class="fa-regular fa-circle-caret-down fa-bounce"></i>  </button>
-                            
                             <p class="imessage">
                                 The school has many project that will be done in 2027 - 2030. <br>
                                 <ul style="list-style-type: disc; display: none;" class="dropdown-content">
@@ -396,21 +346,19 @@
                                     <script>
                                         // Function to toggle visibility of the dropdown content
                                         function toggleDropdown() {
-                                          var content = document.querySelector('.dropdown-content');
-                                          // Toggle the display property to show/hide the content
-                                          if (content.style.display === "none" || content.style.display === "") {
-                                            content.style.display = "block";
-                                          } else {
-                                            content.style.display = "none";
-                                          }
+                                            var content = document.querySelector('.dropdown-content');
+                                            // Toggle the display property to show/hide the content
+                                            if (content.style.display === "none" || content.style.display === "") {
+                                                content.style.display = "block";
+                                            } else {
+                                                content.style.display = "none";
+                                            }
                                         }
-                                      </script>
+                                    </script>
                                 </ul>
                             </p>
                             <li class="P">Our mission</li>
-                            <p class="imessage">We provide high quality secondary education in Rwanda by offering a secure and nurturing school environment that transforms vulnerable youth into future leaders and problem solvers who champion environmental sustainability and social change.  It is all about our students…. our student body says “Thank You!!!”
-
-                            </p>
+                            <p class="imessage">We provide high quality secondary education in Rwanda by offering a secure and nurturing school environment that transforms vulnerable youth into future leaders and problem solvers who champion environmental sustainability and social change.  It is all about our students…. our student body says “Thank You!!!”</p>
                             <li class="P">Our values</li>
                             <p class="imessage">We set standards for responsibility and high achievement, and develop an inclusive, supportive, and trusting student body that is able to leverage critical thinking and make a meaningful impact in their communities and beyond. Core to our philosophy is experiential learning, a pedagogy that empowers students through cross disciplinary instruction, project-based learning, global awareness, and character building. Founded upon the principles of Christianity, we recognize and acknowledge students from all religious backgrounds and beliefs by promoting a school culture of awareness, respect, and tolerance.</p>
                             <img class="rls" src="photos/rls.jpg" alt="">
@@ -419,10 +367,8 @@
                     </p>
                 </div>
             </div>
-            </div>
-        
+        </div>
     </div>
-
     <div id="Images" class="section">
         <div class="text">
             <h1 class="head">RWAMAGANA LEADERS' SCHOOL</h1><br>
@@ -437,11 +383,9 @@
                 let scale = 1;
                 const minScale = 1; // Minimum zoom out level (50%)
                 const maxScale = 20.0; // Maximum zoom in level (200%)
-        
                 const content = document.getElementById("fullImg");
                 const zoomInBtn = document.getElementById("zoomInBtn");
                 const zoomOutBtn = document.getElementById("zoomOutBtn");
-        
                 function updateButtons() {
                     // Disable Zoom In button if scale >= maxScale
                     if (scale >= maxScale) {
@@ -449,7 +393,6 @@
                     } else {
                         zoomInBtn.disabled = false;
                     }
-        
                     // Disable Zoom Out button if scale <= minScale
                     if (scale <= minScale) {
                         zoomOutBtn.disabled = true;
@@ -457,7 +400,6 @@
                         zoomOutBtn.disabled = false;
                     }
                 }
-        
                 function zoomIn() {
                     if (scale < maxScale) { // Check maximum scale
                         scale += 0.5;
@@ -468,7 +410,6 @@
                         updateButtons();
                     } 
                 }
-        
                 function zoomOut() {
                     if (scale > minScale) { // Check minimum scale
                         scale -= 0.5;
@@ -479,7 +420,6 @@
                         updateButtons();
                     } 
                 }
-        
                 // Initialize button states
                 updateButtons();
             </script>
@@ -487,38 +427,32 @@
         </div>
         <div class="image">
             <div class="box">
-            <div class="grid"><img src="photos/355071725_731558865636379_3736554800341743610_n.jpg" onclick="openFullImg(this.src)"><a href="" download="photos/355071725_731558865636379_3736554800341743610_n.jpg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-            <div class="grid"><img src="photos/90796716_207619357323828_6429244881637474304_n.jpg" onclick="openFullImg(this.src)"><a href="" download="photos/90796716_207619357323828_6429244881637474304_n.jpg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-            <div class="grid"><img src="photos/86802842_178758283543269_5436233165603602432_n.jpg" onclick="openFullImg(this.src)"><a href="" download="photos/86802842_178758283543269_5436233165603602432_n.jpg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-            <div class="grid"><img src="photos/assemble.JPG" onclick="openFullImg(this.src)"><a href="" download="photos/assemble.JPG"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-            <div class="grid"><img src="photos/reginald.JPG" onclick="openFullImg(this.src)"><a href="" download="photos/reginald.JPG"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-            <div class="grid"><img src="photos/laissa and reginald.JPG" onclick="openFullImg(this.src)"><a href="" download="photos/laissa and reginald.JPG"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-            <div class="grid"><img src="photos/kayumba.JPG" onclick="openFullImg(this.src)"><a href="" download="photos/kayumba.JPG"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-            <div class="grid"><img src="photos/babra.JPG" onclick="openFullImg(this.src)"><a href="" download="photos/babra.JPG"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-            <div class="grid"><img src="photos/vannesa.JPG" onclick="openFullImg(this.src)"><a href="" download="photos/vannesa.JPG"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-            <div class="grid"><img src="photos/DOS.JPG" onclick="openFullImg(this.src)"><a href="" download="photos/DOS.JPG"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-            <div class="grid"><img src="photos/DOS (2).JPG" onclick="openFullImg(this.src)"><a href="" download="photos/DOS (2).JPG"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-            <div class="grid"><img src="photos/163281299_461704251915336_9057106096619367748_n.jpg" onclick="openFullImg(this.src)"><a href="" download="photos/163281299_461704251915336_9057106096619367748_n.jpg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-            <div class="grid"><img src="photos/71706333_127722278646870_4952792651788189696_n.jpg" onclick="openFullImg(this.src)"><a href="" download="photos/71706333_127722278646870_4952792651788189696_n.jpg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-            <div class="grid"><img src="photos/366178244_766384028820529_4002115965798574471_n.jpg" onclick="openFullImg(this.src)"><a href="" download="photos/366178244_766384028820529_4002115965798574471_n.jpg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-            <div class="grid"><img src="photos/365653935_764031079055824_952850170869143550_n.jpg" onclick="openFullImg(this.src)"><a href="" download="photos/365653935_764031079055824_952850170869143550_n.jpg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-            <div class="grid"><img src="photos/FyvUccMWIActy3W.jpeg" onclick="openFullImg(this.src)"><a href="" download="photos/FyvUccMWIActy3W.jpeg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-            <div class="grid"><img src="photos/FyvUccwWcAEL6RV.jpg" onclick="openFullImg(this.src)"><a href="" download="photos/FyvUccwWcAEL6RV.jpg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-            <div class="grid"><img src="photos/FyvUW4HWwAA479L.jpg" onclick="openFullImg(this.src)"><a href="" download="photos/FyvUW4HWwAA479L.jpg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-            <div class="grid"><img src="photos/2022-07-24.jpg" onclick="openFullImg(this.src)"><a href="" download="photos/2022-07-24.jpg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-            <div class="grid"><img src="photos/380361476_739076998388270_9071735417715529313_n.jpg" onclick="openFullImg(this.src)"><a href="" download="photos/380361476_739076998388270_9071735417715529313_n.jpg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-            <div class="grid"><img src="photos/454008306_927946739501294_8338980946281694465_n.jpg" onclick="openFullImg(this.src)"><a href="" download="photos/454008306_927946739501294_8338980946281694465_n.jpg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-            <div class="grid"><img src="photos/a6d2e3_fa1df7e03ec24664a24bc56f3f983b3b~mv2.webp" onclick="openFullImg(this.src)"><a href="" download="photos/a6d2e3_fa1df7e03ec24664a24bc56f3f983b3b~mv2.webp"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-            <div class="grid"><img src="photos/bruno.JPG" onclick="openFullImg(this.src)"><a href="" download="photos/bruno.JPG"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-            <div class="grid"><img src="photos/winrobotics.JPG" onclick="openFullImg(this.src)"><a href="" download="photos/winrobotics.JPG"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-            <div class="grid"><img src="photos/trip.JPG" onclick="openFullImg(this.src)"><a href="" download="photos/trip.JPG"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
-
-
-
+                <div class="grid"><img src="photos/355071725_731558865636379_3736554800341743610_n.jpg" onclick="openFullImg(this.src)"><a href="" download="photos/355071725_731558865636379_3736554800341743610_n.jpg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
+                <div class="grid"><img src="photos/90796716_207619357323828_6429244881637474304_n.jpg" onclick="openFullImg(this.src)"><a href="" download="photos/90796716_207619357323828_6429244881637474304_n.jpg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
+                <div class="grid"><img src="photos/86802842_178758283543269_5436233165603602432_n.jpg" onclick="openFullImg(this.src)"><a href="" download="photos/86802842_178758283543269_5436233165603602432_n.jpg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
+                <div class="grid"><img src="photos/assemble.JPG" onclick="openFullImg(this.src)"><a href="" download="photos/assemble.JPG"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
+                <div class="grid"><img src="photos/reginald.JPG" onclick="openFullImg(this.src)"><a href="" download="photos/reginald.JPG"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
+                <div class="grid"><img src="photos/laissa and reginald.JPG" onclick="openFullImg(this.src)"><a href="" download="photos/laissa and reginald.JPG"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
+                <div class="grid"><img src="photos/kayumba.JPG" onclick="openFullImg(this.src)"><a href="" download="photos/kayumba.JPG"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
+                <div class="grid"><img src="photos/babra.JPG" onclick="openFullImg(this.src)"><a href="" download="photos/babra.JPG"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
+                <div class="grid"><img src="photos/vannesa.JPG" onclick="openFullImg(this.src)"><a href="" download="photos/vannesa.JPG"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
+                <div class="grid"><img src="photos/DOS.JPG" onclick="openFullImg(this.src)"><a href="" download="photos/DOS.JPG"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
+                <div class="grid"><img src="photos/DOS (2).JPG" onclick="openFullImg(this.src)"><a href="" download="photos/DOS (2).JPG"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
+                <div class="grid"><img src="photos/163281299_461704251915336_9057106096619367748_n.jpg" onclick="openFullImg(this.src)"><a href="" download="photos/163281299_461704251915336_9057106096619367748_n.jpg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
+                <div class="grid"><img src="photos/71706333_127722278646870_4952792651788189696_n.jpg" onclick="openFullImg(this.src)"><a href="" download="photos/71706333_127722278646870_4952792651788189696_n.jpg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
+                <div class="grid"><img src="photos/366178244_766384028820529_4002115965798574471_n.jpg" onclick="openFullImg(this.src)"><a href="" download="photos/366178244_766384028820529_4002115965798574471_n.jpg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
+                <div class="grid"><img src="photos/365653935_764031079055824_952850170869143550_n.jpg" onclick="openFullImg(this.src)"><a href="" download="photos/365653935_764031079055824_952850170869143550_n.jpg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
+                <div class="grid"><img src="photos/FyvUccMWIActy3W.jpeg" onclick="openFullImg(this.src)"><a href="" download="photos/FyvUccMWIActy3W.jpeg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
+                <div class="grid"><img src="photos/FyvUccwWcAEL6RV.jpg" onclick="openFullImg(this.src)"><a href="" download="photos/FyvUccwWcAEL6RV.jpg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
+                <div class="grid"><img src="photos/FyvUW4HWwAA479L.jpg" onclick="openFullImg(this.src)"><a href="" download="photos/FyvUW4HWwAA479L.jpg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
+                <div class="grid"><img src="photos/2022-07-24.jpg" onclick="openFullImg(this.src)"><a href="" download="photos/2022-07-24.jpg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
+                <div class="grid"><img src="photos/380361476_739076998388270_9071735417715529313_n.jpg" onclick="openFullImg(this.src)"><a href="" download="photos/380361476_739076998388270_9071735417715529313_n.jpg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
+                <div class="grid"><img src="photos/454008306_927946739501294_8338980946281694465_n.jpg" onclick="openFullImg(this.src)"><a href="" download="photos/454008306_927946739501294_8338980946281694465_n.jpg"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
+                <div class="grid"><img src="photos/a6d2e3_fa1df7e03ec24664a24bc56f3f983b3b~mv2.webp" onclick="openFullImg(this.src)"><a href="" download="photos/a6d2e3_fa1df7e03ec24664a24bc56f3f983b3b~mv2.webp"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
+                <div class="grid"><img src="photos/bruno.JPG" onclick="openFullImg(this.src)"><a href="" download="photos/bruno.JPG"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
+                <div class="grid"><img src="photos/winrobotics.JPG" onclick="openFullImg(this.src)"><a href="" download="photos/winrobotics.JPG"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
+                <div class="grid"><img src="photos/trip.JPG" onclick="openFullImg(this.src)"><a href="" download="photos/trip.JPG"><button type="button"><i class="fa-solid fa-download"></i> DOWNLOAD</button></a></div>
             </div>
-
-
-
             <script> 
                 var fullImgBox = document.getElementById("fullImgBox");
                 var fullImg = document.getElementById("fullImg");
@@ -526,18 +460,12 @@
                     fullImgBox.style.display = "flex";
                     fullImg.src = pic;
                 }
-
                 function closeFullImg(){
                     fullImgBox.style.display = "none";
                 }
-                function fullImgBox(){
-                    fullImgBox
-                }
-        
             </script>
         </div>
     </div>
-
     <div id="address" class="section">
         <div class="text">
             <h1 class="head">RWAMAGANA LEADERS' SCHOOL</h1><br>
@@ -546,15 +474,15 @@
         </div>
         <div class="form1">
             <form action="https://formspree.io/f/mrbglyzy" method="POST">
-               <h1 class="head1">MESSAGE</h1>
-               <p class="head1">Text for us, we will send you feedback on your Email.</p>
-               <label for="insert">
-               <input type="text" name="Names" placeholder="Full Names" required><br>
-               </label>
-               <input type="email" name="email" placeholder="Email" required><br>
-               <input type="number" name="phone number" placeholder="Phone Number" required><br>
-               <textarea name="Message" id="" required placeholder="Message..."></textarea><br>
-               <input class="submit" type="submit" value="SEND">
+                <h1 class="head1">MESSAGE</h1>
+                <p class="head1">Text for us, we will send you feedback on your Email.</p>
+                <label for="insert">
+                    <input type="text" name="Names" placeholder="Full Names" required><br>
+                </label>
+                <input type="email" name="email" placeholder="Email" required><br>
+                <input type="number" name="phone number" placeholder="Phone Number" required><br>
+                <textarea name="Message" id="" required placeholder="Message..."></textarea><br>
+                <input class="submit" type="submit" value="SEND">
             </form>    
         </div>
         <div class="other">
@@ -570,31 +498,11 @@
             <div class="googlemap">
                 <h2>Google Map</h2>
                 <p class="imessage">The map of the school. Click the following map to view the address/location where school is located.</p>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1104.3743033763728!2d30.431876061329408!3d-1.9404947013403095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19db4426fbb3258b%3A0x81255b8c48b53500!2sRwamagana%20Leaders&#39;%20School!5e1!3m2!1sen!2srw!4v1738762420627!5m2!1sen!2srw" width="500" height="350" style="border:0; box-shadow: none; border-radius: 0%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1104.3743033763728!2d30.431876061329408!3d-1.9404947013403095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19db4426fbb3258b%3A0x81255b8c48b53500!2sRwamagana%20Leaders'%20School!5e1!3m2!1sen!2srw!4v1738762420627!5m2!1sen!2srw" width="500" height="350" style="border:0; box-shadow: none; border-radius: 0%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-       <footer>
+    <footer>
         <div>
             <div class="row">
                 <div class="footer-col">
@@ -632,19 +540,11 @@
                 </div>
             </div>
         </div>
-        <h5>&copy; <span id="year"></span> Copyright. All Rights Reserved. RLS</h5>
+        <h5>© <span id="year"></span> Copyright. All Rights Reserved. RLS</h5>
         <script>
             // JavaScript to update the year automatically
             document.getElementById('year').textContent = new Date().getFullYear();
-          </script>
-    
-       </footer>
-    
-    
-    </div>
-
-
-
-
+        </script>
+    </footer>
 </body>
 </html>
