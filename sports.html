@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Sport Scoreboard</title>
+    <script>
+        function goToOthera(){
+            window.location.href = 'menu.html';
+        }
+        function goToOtherb(){
+            window.location.href = 'menu.html#about';
+        }
+        function goToOtherc(){
+            window.location.href = 'menu.html#Images';
+        }
+        function goToOtherd(){
+            window.location.href = 'menu.html#address';
+        }
+
+        function announceOpen(){
+                    announcement.style.display = "block";
+                    openB.style.display = "none";
+                    closeB.style.display = "block";
+                }
+
+
+        function announceClose(){
+                    announcement.style.display = "none";
+                    closeB.style.display = "none";
+                    openB.style.display = "block";
+                }
+
+
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(photos/IMG_E1532.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+        .scoreboard {
+            background: white;
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .football, .basketball, .volleyball {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .team-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+        }
+        .team {
+            font-size: 24px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 40%;
+        }
+        .team span {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        .score {
+            font-size: 28px;
+            color: #e63946;
+        }
+        .vs {
+            font-size: 28px;
+            font-weight: bold;
+            color: #6e6e6e;
+            width: 20%;
+            text-align: center;
+        }
+        .nav button {
+            width: 10cm;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            height: 1cm;
+        }
+        
+        .nav button:hover {
+            background-color: rgb(224, 224, 224);
+            border-radius: 5px;
+        }
+        .nav .button1 {
+            box-shadow: 0px 5px 1px 1px greenyellow;
+        }
+        h1{
+            color: aliceblue;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .wall{
+            background-color: #ffffff91;
+            margin-left: 5%;
+            margin-right: 2%;
+            border-radius: 5px;
+        }
+        .h3{
+    color: green;
+}
+nav{
+    font-size: 30px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: auto;
+    left: 0;
+    background: #1d491b;
+    width: 80px;
+    transition: width 0.2s linear;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    z-index: 1000;
+    
+}
+
+nav:hover{
+    width: 7cm;
+    transition: 0.3s;
+}
+
+nav button{
+    background-color: #1d491b;
+    border: none;
+    color: aliceblue;
+    cursor: pointer;
+    margin-bottom: 2cm;
+    font-size: 20px;
+    width: 100%;
+}
+
+.nav{
+    font-size: 15px;
+}
+
+nav button:hover{
+    background-color: #0d200c;
+}
+
+.logo{
+    height: 2cm;
+    width: 2cm;
+    border-radius: 50%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+}
+.announcement{
+    font-size: 13px;
+    background-color: rgb(35, 31, 31);
+    width: 10cm;
+    height: fit-content;
+    color: white;
+    border-radius: 10px;
+    margin-left: 2cm;
+    margin-top: 0.5cm;
+    position: fixed;
+    text-align: center;
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.3);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#vopenB{
+    display: none;
+}
+#vcloseB{
+    display: block;
+}
+.vcloseB,.vopenB{
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(216, 216, 216);
+    cursor: pointer;
+    font-size: 30px;
+    color: #1900ff83;
+}
+.openB{
+    display: none;
+}
+.openB,.closeB{
+    font-size: 20px;
+    position: fixed;
+    width: 3cm;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: #0000008c;
+}
+
+.announcement h2{
+    color: #175f13;
+}
+.openB i{
+    animation: pulse 1.1s infinite;
+}
+.head{
+    color: rgb(25, 136, 31);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 2.5%;
+    text-align: center;
+}
+
+.text .logo{
+    display: none;
+}
+#nav span{
+    display: none;
+}
+.nave{
+    display: none;
+}
+
+@keyframes pulse {
+    0% {
+        transform: rotate(30deg);
+    }
+    50% {
+        transform: rotate(-30deg);
+    }
+    100% {
+        transform: rotate(30deg);
+    }
+    
+}
+.but{
+    position: fixed;
+    margin-left: 2cm;
+}
+@media (max-width: 600px) {
+    #nav{
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+        display: none;
+        z-index: 100000;
+        background-color: #000000b9;
+    }
+    #nav .logo{
+        display: none;
+    }
+
+    #nav button{
+        height: 2cm;
+        width: 90%;
+        font-size: 25px;
+        background-color: rgba(128, 128, 128, 0.808);
+        border-radius: 5px;
+        text-align: center;
+    }
+    #nav span{
+        display: block;
+        color: #fff;
+        position: fixed;
+        top: 2%;
+        right: 4%;
+    }
+    #nav span i{
+        font-size: 30px;
+    }
+
+    .introduction .head{
+        font-size: 15px;
+    }
+    button i,p{
+        display: inline;
+    }
+
+    button i,.nav{
+        margin-left: 0%;
+    }
+    #nav .head{
+        font-size: 20px;
+        display: block;
+        font-weight: bolder;
+        margin-top: -4%;
+        margin-bottom: 10%;
+    }
+    nav{
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+    }
+
+    nav:hover{
+        width: 100%;
+        z-index: 100000;
+    }
+    .nave{
+        background-color: #175f13;
+        display: block;
+        position: fixed;
+        height: 1.5cm;
+        width: 100%;
+        top: 0;
+        z-index: 10000;
+    }
+    .nave h2{
+        color: #fff;
+        position: fixed;
+        top: -1%;
+        right: 4%;
+    }
+    .nave .head{
+        margin-top: -9%;
+        display: block;
+        height: 0;
+        text-align: center;
+    }
+    .nave .slogan{
+        display: block;
+        color: #d1cfcf;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 10px;
+        text-align: center;
+        margin-top: -1%;
+    }
+    .nave .logo{
+        margin-left: 2%;
+        margin-top: 2%;
+        display: block;
+    }
+    .n .logo{
+        display: none;
+    }
+
+    .head,.wel,.intro{
+        font-size: 10px;
+    }
+    .nav{
+        font-size: 12px;
+    }
+    .logo{
+        height: 1cm;
+        width: 1cm;
+    }
+    .footer-col h4{
+        font-size: 8px;
+        margin: 0%;
+    }
+    .footer-col ul li a, .footer-col .social-links a, h5{
+        font-size: 10%;
+        margin-right: 0%;
+    }
+    .footer-col .social-links a{
+        width: 20px;
+        height: 20px;
+        margin-right: 0.1cm;
+        background: none;
+    }
+    footer{
+        margin-left: 0%;
+    }
+    .announcement{
+        font-size: 10px;
+        width: 7cm;
+        bottom: 8%;
+        right: 4%;
+        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.3);
+    }
+    .openB,.closeB{
+        border: solid 2px #00ff00;
+        color: #00ff00;
+        border-radius: 50%;
+        width: 2cm;
+        font-size: 25px;
+        bottom: 2%;
+        right: 4%;
+        width: 1.3cm;
+        height: 1.3cm;
+        background-color: #000000 ;
+    }
+    .closeB{
+        border-color: #000000;
+    }
+    .but i{
+        margin: 0%;
+    }
+    .timeline-container{
+        margin-top: 25%;
+        background-color: transparent;
+        height: auto;
+    }
+    .wall{
+        background: none;
+        margin: 0%;
+        width: 90%;
+        display:contents;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .team-container{
+        width: 100%;
+        margin: 0%;
+    }
+    .football,.basketball,.volleyball{
+        width: 100%;
+        font-size: 18px;
+    }
+    .team,.vs,.score{
+        font-size: 10px;
+    }
+    h1{
+        margin-top: 35%;
+        font-size: 20px;
+    }
+    .scoreboard{
+        width: 95%;
+        margin: 0%;
+        margin-top: 10%;
+    }
+
+    button i{
+        margin-left: 0%;
+    }
+
+    button .nav{
+        margin-left: 3%;
+        font-size: 15px;
+    }
+
+    .n i,.nav{
+        display: inline;
+        font-size: 20px;
+    }
+
+}
+
+    </style>
+</head>
+<body>
+    <nav class="n" id="nav">
+        <script>
+            function goToHome() {
+                window.location.href = 'index.html';
+            }
+            function closenav(){
+                nav.style.display = "none";
+            }
+        </script>
+        <img class="logo" src="photos/Untitled.jpg" alt="" onclick="goToHome()"><br>
+        <P class="head">RLS</P>
+        <span onclick="closenav()"><i class="fa-solid fa-xmark"></i></span>
+        <button type="button" onclick="goToOthera()"><i class="fa-solid fa-house"></i><p class="nav">Home</p></button>
+        <button type="button" onclick="goToOtherb()"><i class="fa-solid fa-newspaper"></i><p class="nav">News</p></button>
+        <button type="button" onclick="goToOtherc()"><i class="fa-solid fa-image"></i><p class="nav">Gallery</p></button>
+        <button type="button" onclick="goToOtherd()"><i class="fa-solid fa-address-book"></i><p class="nav">Contact</p></button>
+    </nav>
+    <div class="but">
+        <button type="button" onclick="announceOpen()" class="openB" id="openB"><i class="fa-solid fa-bell"></i></button>
+        <button type="button" onclick="announceClose()" class="closeB" id="closeB"><i class="fa-solid fa-xmark"></i></button>    
+        </div>
+        <div class="announcement" id="announcement">
+            <h2><i class="fa-solid fa-bell"></i> <u>NOTIFICATIONS</u></h2>
+            <ol>
+                <li>The easiest way of checking result of the student of End-Term or Mid-Term press <i><a href="tel: *775*1# " style="color: rgb(255, 232, 132); text-decoration: none;">*775*1# </a></i> . </li>
+            </ol>
+        </div>
+
+        <div class="nave">
+            <img class="logo" src="photos/Untitled.jpg" alt="">
+            <h1 class="head">RWAMAGANA LEADERS' SCHOOL</h1><br>
+            <p class="slogan">Where education is for life ...</p>
+            <h2 onclick="opennav()">V</h2>
+            <script>
+                function opennav(){
+                    nav.style.display = "block";
+                }
+            </script>
+            </div>
+
+
+    <!-- Football Section -->
+     <div class="wall">
+        <h1>Sports</h1>
+
+    <div class="scoreboard">
+        <div class="football">⚽ Football ⚽</div>
+        <div class="team-container" id="football">
+            <div class="team">
+                <span id="football_teamA_name">Team A</span>
+                <span class="score" id="football_teamA_score">0</span>
+            </div>
+            <div class="vs">VS</div>
+            <div class="team">
+                <span id="football_teamB_name">Team B</span>
+                <span class="score" id="football_teamB_score">0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Basketball Section -->
+    <div class="scoreboard">
+        <div class="basketball">🏀 BasketBall 🏀</div>
+        <div class="team-container" id="basketball">
+            <div class="team">
+                <span id="basketball_teamA_name">Team A</span>
+                <span class="score" id="basketball_teamA_score">0</span>
+            </div>
+            <div class="vs">VS</div>
+            <div class="team">
+                <span id="basketball_teamB_name">Team B</span>
+                <span class="score" id="basketball_teamB_score">0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Volleyball Section -->
+    <div class="scoreboard">
+        <div class="volleyball">🏐 VolleyBall 🏐</div>
+        <div class="team-container" id="volleyball">
+            <div class="team">
+                <span id="volleyball_teamA_name">Team A</span>
+                <span class="score" id="volleyball_teamA_score">0</span>
+            </div>
+            <div class="vs">VS</div>
+            <div class="team">
+                <span id="volleyball_teamB_name">Team B</span>
+                <span class="score" id="volleyball_teamB_score">0</span>
+            </div>
+        </div>
+    </div>
+     </div>
+
+    <script>
+        
+        // This function updates the scoreboard for a specific sport.
+        function updateScores(sport) {
+            const teamAName = localStorage.getItem(`${sport}_teamA_name`) || `Team A`;
+            const teamBName = localStorage.getItem(`${sport}_teamB_name`) || `Team B`;
+            const teamAScore = localStorage.getItem(`${sport}_teamA_score`) || 0;
+            const teamBScore = localStorage.getItem(`${sport}_teamB_score`) || 0;
+
+            document.getElementById(`${sport}_teamA_name`).innerText = teamAName;
+            document.getElementById(`${sport}_teamB_name`).innerText = teamBName;
+            document.getElementById(`${sport}_teamA_score`).innerText = teamAScore;
+            document.getElementById(`${sport}_teamB_score`).innerText = teamBScore;
+        }
+
+        // When the page loads, update the scores for all sports
+        window.onload = function() {
+            updateScores('football');
+            updateScores('basketball');
+            updateScores('volleyball');
+        };
+    </script>
+
+</body>
+</html>

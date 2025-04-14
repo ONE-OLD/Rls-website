@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Scoreboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .scoreboard {
+            background: white;
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .football {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .team-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+        }
+        .team {
+            font-size: 24px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 40%;
+        }
+        .team span {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        .score {
+            font-size: 28px;
+            color: #e63946;
+        }
+        .vs {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            width: 20%;
+            text-align: center;
+        }
+        .menu {
+            margin-bottom: 10px;
+        }
+        .menu button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+        }
+        .menu button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function loadScores() {
+            document.getElementById('teamA-score').innerText = localStorage.getItem('teamA_score') || 10;
+            document.getElementById('teamB-score').innerText = localStorage.getItem('teamB_score') || 2;
+        }
+    </script>
+</head>
+<body onload="loadScores()">
+    <div class="scoreboard">
+        <div class="football">⚽ Football ⚽</div>
+        <div class="menu">
+            <button onclick="alert('Showing Boys Scores')">Boys</button>
+            <button onclick="alert('Showing Girls Scores')">Girls</button>
+        </div>
+        <div class="team-container">
+            <div class="team">
+                <span>Team A</span>
+                <span class="score" id="teamA-score">0</span>
+            </div>
+            <div class="vs">VS</div>
+            <div class="team">
+                <span>Team B</span>
+                <span class="score" id="teamB-score">0</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

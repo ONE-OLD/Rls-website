@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Scores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(45deg,rgba(0, 0, 255, 0.568), rgb(0, 88, 0));
+            text-align: center;
+            background-attachment: fixed;
+        }
+        .form-container {
+            background: white;
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
+        }
+        .form-container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        label {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 98%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #008cba;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #006f8c;
+        }
+        .nav {
+            margin-top: 20px;
+        }
+        .nav a {
+            font-size: 18px;
+            color: #008cba;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        .sports{
+            color: grey;
+            text-decoration: double;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        img{
+            border-radius: 50%;
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <img src="photos/Untitled.jpg" alt="">
+        <h2>Update Scores and Team Names</h2>
+
+        <!-- Football Section -->
+        <h1 class="sports">FootBall</h1> 
+        <div class="input-group">
+            <label for="football_teamA_name">Football - Team A Name:</label>
+            <input type="text" id="football_teamA_name">
+        </div>
+        <div class="input-group">
+            <label for="football_teamB_name">Football - Team B Name:</label>
+            <input type="text" id="football_teamB_name">
+        </div>
+        <div class="input-group">
+            <label for="football_teamA_score">Football - Team A Score:</label>
+            <input type="number" id="football_teamA_score">
+        </div>
+        <div class="input-group">
+            <label for="football_teamB_score">Football - Team B Score:</label>
+            <input type="number" id="football_teamB_score">
+        </div>
+
+        <!-- Basketball Section -->
+        <h1 class="sports">BasketBall</h1> 
+        <div class="input-group">
+            <label for="basketball_teamA_name">Basketball - Team A Name:</label>
+            <input type="text" id="basketball_teamA_name">
+        </div>
+        <div class="input-group">
+            <label for="basketball_teamB_name">Basketball - Team B Name:</label>
+            <input type="text" id="basketball_teamB_name">
+        </div>
+        <div class="input-group">
+            <label for="basketball_teamA_score">Basketball - Team A Score:</label>
+            <input type="number" id="basketball_teamA_score">
+        </div>
+        <div class="input-group">
+            <label for="basketball_teamB_score">Basketball - Team B Score:</label>
+            <input type="number" id="basketball_teamB_score">
+        </div>
+
+        <!-- Volleyball Section -->
+        <h1 class="sports">VolleyBall</h1>
+        <div class="input-group">
+            <label for="volleyball_teamA_name">Volleyball - Team A Name:</label>
+            <input type="text" id="volleyball_teamA_name">
+        </div>
+        <div class="input-group">
+            <label for="volleyball_teamB_name">Volleyball - Team B Name:</label>
+            <input type="text" id="volleyball_teamB_name">
+        </div>
+        <div class="input-group">
+            <label for="volleyball_teamA_score">Volleyball - Team A Score:</label>
+            <input type="number" id="volleyball_teamA_score">
+        </div>
+        <div class="input-group">
+            <label for="volleyball_teamB_score">Volleyball - Team B Score:</label>
+            <input type="number" id="volleyball_teamB_score">
+        </div>
+
+        <button class="btn" onclick="updateScores()">Update Scores</button>
+
+        <div class="nav">
+            <a href="sports.html">Back to Scoreboard</a>
+        </div>
+        <div id="success-message" class="success-message" style="display: none; color: green;"></div>
+    </div>
+
+    <script>
+        // Pre-fill current team names and scores
+        window.onload = function() {
+            document.getElementById('football_teamA_name').value = localStorage.getItem('football_teamA_name') || 'Team A';
+            document.getElementById('football_teamB_name').value = localStorage.getItem('football_teamB_name') || 'Team B';
+            document.getElementById('football_teamA_score').value = localStorage.getItem('football_teamA_score') || 0;
+            document.getElementById('football_teamB_score').value = localStorage.getItem('football_teamB_score') || 0;
+
+            document.getElementById('basketball_teamA_name').value = localStorage.getItem('basketball_teamA_name') || 'Team A';
+            document.getElementById('basketball_teamB_name').value = localStorage.getItem('basketball_teamB_name') || 'Team B';
+            document.getElementById('basketball_teamA_score').value = localStorage.getItem('basketball_teamA_score') || 0;
+            document.getElementById('basketball_teamB_score').value = localStorage.getItem('basketball_teamB_score') || 0;
+
+            document.getElementById('volleyball_teamA_name').value = localStorage.getItem('volleyball_teamA_name') || 'Team A';
+            document.getElementById('volleyball_teamB_name').value = localStorage.getItem('volleyball_teamB_name') || 'Team B';
+            document.getElementById('volleyball_teamA_score').value = localStorage.getItem('volleyball_teamA_score') || 0;
+            document.getElementById('volleyball_teamB_score').value = localStorage.getItem('volleyball_teamB_score') || 0;
+        };
+
+        function updateScores() {
+            // Save the updated team names and scores to localStorage
+            localStorage.setItem('football_teamA_name', document.getElementById('football_teamA_name').value);
+            localStorage.setItem('football_teamB_name', document.getElementById('football_teamB_name').value);
+            localStorage.setItem('football_teamA_score', document.getElementById('football_teamA_score').value);
+            localStorage.setItem('football_teamB_score', document.getElementById('football_teamB_score').value);
+
+            localStorage.setItem('basketball_teamA_name', document.getElementById('basketball_teamA_name').value);
+            localStorage.setItem('basketball_teamB_name', document.getElementById('basketball_teamB_name').value);
+            localStorage.setItem('basketball_teamA_score', document.getElementById('basketball_teamA_score').value);
+            localStorage.setItem('basketball_teamB_score', document.getElementById('basketball_teamB_score').value);
+
+            localStorage.setItem('volleyball_teamA_name', document.getElementById('volleyball_teamA_name').value);
+            localStorage.setItem('volleyball_teamB_name', document.getElementById('volleyball_teamB_name').value);
+            localStorage.setItem('volleyball_teamA_score', document.getElementById('volleyball_teamA_score').value);
+            localStorage.setItem('volleyball_teamB_score', document.getElementById('volleyball_teamB_score').value);
+
+            const successMessage = document.getElementById('success-message');
+            successMessage.innerText = '✅Scores and team names updated successfully!';
+            successMessage.style.display = 'block';            
+        }
+
+    </script>
+</body>
+</html>

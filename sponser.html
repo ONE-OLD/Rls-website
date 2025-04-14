@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsored Information</title>
+    <link rel="stylesheet" href="sponser.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        function goToOthera(){
+            window.location.href = 'menu.html';
+        }
+        function goToOtherb(){
+            window.location.href = 'menu.html#about';
+        }
+        function goToOtherc(){
+            window.location.href = 'menu.html#Images';
+        }
+        function goToOtherd(){
+            window.location.href = 'menu.html#address';
+        }
+
+        function announceOpen(){
+                    announcement.style.display = "block";
+                    openB.style.display = "none";
+                    closeB.style.display = "block";
+                }
+
+
+        function announceClose(){
+                    announcement.style.display = "none";
+                    closeB.style.display = "none";
+                    openB.style.display = "block";
+                }
+
+
+    </script>
+
+
+</head>
+<body>
+
+    <nav class="n" id="nav">
+        <script>
+            function goToHome() {
+                window.location.href = 'index.html';
+            }
+            function closenav(){
+                nav.style.display = "none";
+            }
+        </script>
+        <img class="logo" src="photos/Untitled.jpg" alt="" onclick="goToHome()"><br>
+        <P class="head">RLS</P>
+        <span onclick="closenav()"><i class="fa-solid fa-xmark"></i></span>
+        <button type="button" onclick="goToOthera()"><i class="fa-solid fa-house"></i><p class="nav">Home</p></button>
+        <button type="button" onclick="goToOtherb()"><i class="fa-solid fa-newspaper"></i><p class="nav">News</p></button>
+        <button type="button" onclick="goToOtherc()"><i class="fa-solid fa-image"></i><p class="nav">Gallery</p></button>
+        <button type="button" onclick="goToOtherd()"><i class="fa-solid fa-address-book"></i><p class="nav">Contact</p></button>
+    </nav>
+    <div class="but">
+        <button type="button" onclick="announceOpen()" class="openB" id="openB"><i class="fa-solid fa-bell"></i></button>
+        <button type="button" onclick="announceClose()" class="closeB" id="closeB"><i class="fa-solid fa-xmark"></i></button>    
+    </div>
+    <div class="announcement" id="announcement">
+        <h2><i class="fa-solid fa-bell"></i> <u>NOTIFICATIONS</u></h2>
+        <ol>
+            <li>The easiest way of checking result of the student of End-Term or Mid-Term press <i><a href="tel: *775*1# " style="color: rgb(255, 232, 132); text-decoration: none;">*775*1# </a></i> . </li>
+        </ol>
+    </div>
+    <div class="nave">
+        <img class="logo" src="photos/Untitled.jpg" alt="" onclick="goToHome()">
+        <h1 class="head">RWAMAGANA LEADERS' SCHOOL</h1><br>
+        <p class="slogan">Where education is for life ...</p>
+        <h2 onclick="opennav()"><i class="fa-solid fa-bars"></i></h2>
+        <script>
+            function opennav(){
+                nav.style.display = "block";
+            }
+        </script>
+        </div>
+
+    
+    
+    <section class="hero">
+        <h1>Discover Exclusive Sponsored Content</h1>
+        <p>Explore insights, trends, and brand-sponsored stories.</p>
+    </section>
+    
+    <section id="sponsored" class="content">
+        <div class="grid">
+            <div class="card">
+                <h2>Sponsored Content</h2>
+                <h3 class="h3">Your sponsorship means the world to a needy student! $180 a month (or $2,160 a year) covers a student’s tuition, uniforms, meals, books and supplies. No long term commitment, you can change at any time. We also have half-sponsorships ($90/mo.), room and board ($45/mo.), or meals for a day student ($20/mo.).</h3>
+                <p class="form_of_sponsering"><a href="Document/Sponsorship-form-website.pdf">Sponsor-Ship Form <span id="year"></span> </a></p>
+                <script>
+                    // JavaScript to update the year automatically
+                    document.getElementById('year').textContent = new Date().getFullYear();
+                  </script>        
+                <ol class="sponsor_list">
+                    <li>
+                        <h3>What do I need to do to become a sponsor?</h3>
+                        <p>New sponsors need to complete the sponsorship form accessed by the link at the top of this page.  Once you have made the commitment, you will  be matched with a student and receive a photo and some information about them.</p>
+                    </li>
+                    <li>
+                        <h3>Are all the students sponsored?</h3>
+                        <p>No. Some parents pay full fees, and others are given a partial sponsorship and they pay the remaining fees. All students pay something in some way so that they also take ownership for their education. Some of our older orphaned students do part time work at the school so that they can contribute to their education. However, the cost to educate one student for a year exceeds the cost paid by the parents in Rwanda.</p>
+                    </li>
+                    <li>
+                        <h3>Do all students board at school?</h3>
+                        <p>About 80% of our students board and the rest are day students who live nearby. Many families prefer boarding because it creates greater opportunities for studying and using school resources. For some students, living at home is a major disadvantage if they have no electricity and are overwhelmed with chores (fetching water, caring for children, and cooking are all very labor intensive in a poor household). Some students come from remote rural areas.</p>
+                    </li>
+                    <li>
+                        <h3>How about communication with the student I sponsor?</h3>
+                        <p>Sponsors should receive two letters a year from the student, along with a photo and information about their student. While writing to your sponsored student is not required, your letters are much appreciated!
+
+                            We discourage donors from sending gifts valued over $10 and we also remind students not to ask their sponsors for additional money or gifts. We want them to appreciate your significant contribution toward their education and also minimize hard feelings between students.
+                            
+                            
+                            </p>
+                    </li>
+                </ol>
+                <p>Short description of the sponsored post.</p>
+            </div>
+            <div class="card" id="card">
+                <iframe id="youtubesponsor" width="695" height="385" src="https://www.youtube.com/embed/Mbr1ZkB13bM" title="Debbi Sponsorship" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p id="videocontent">Video describing the sponsorship process.</p>
+                <button type="button" onclick="videoOpen()" class="vopenB" id="vopenB"><i class="fa-solid fa-film"></i></button>
+                <button type="button" onclick="videoClose()" class="vcloseB" id="vcloseB"><i class="fa-solid fa-xmark"></i></button>    
+                <script>
+                    function videoOpen(){
+                                youtubesponsor.style.display = "block";
+                                vopenB.style.display = "none";
+                                vcloseB.style.display = "block";
+                                videocontent.style.display = "none";
+                            }
+            
+            
+                    function videoClose(){
+                                youtubesponsor.style.display = "none";
+                                vcloseB.style.display = "none";
+                                vopenB.style.display = "block";
+                                videocontent.style.display = "block";
+                            }
+            
+            
+                </script>
+            
+            
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; <span id="years"></span> Rwamagana Leaders' School. All rights reserved.</p>
+        <script>
+            document.getElementById('years').textContent = new Date().getFullYear();
+          </script>        
+
+    </footer>
+</body>
+</html>

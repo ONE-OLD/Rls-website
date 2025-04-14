@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our story (2005 - 2025)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="our story.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-image: url(photos/IMG_E1532.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+    }
+
+    .timeline-container {
+      width: 80%;
+      max-width: 1200px;
+      margin: 30px;
+      padding: 20px;
+      background-color: #ffffff71;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-left: 17%;
+      height: fit-content;
+      z-index: -1;
+    }
+
+    .timeline {
+      position: relative;
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin: 30px 0;
+    }
+
+    .timeline-item:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 100%;
+      background-color: #4CAF50;
+      z-index: -1;
+    }
+
+    .timeline-year {
+      position: absolute;
+      left: 50%;
+      top: -20px;
+      transform: translateX(-50%);
+      background-color: #4CAF50;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .timeline-content {
+      padding: 15px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+
+    .timeline-content h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .timeline-content p {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .timeline-item:last-child:before {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-item:before {
+        left: 30px;
+      }
+
+      .timeline-year {
+        left: 30px;
+        transform: translateX(0);
+      }
+
+      .timeline-content,.timeline-container {
+        margin-left: 0;
+        margin-right: 0;
+        width: 90%;
+        margin: 0%;
+      }
+      .timeline-content li{
+        font-size: 10px;
+      }
+      h1{
+        font-size: 15px;
+      }
+    }
+    .go-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      text-align: center;
+      line-height: 50px;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .go-to-top:hover {
+      background-color: #45a049;
+    }
+
+    /* Show the button when the user scrolls down */
+    .go-to-top.show {
+      opacity: 1;
+    }
+    .timeline-content img{
+        width: 50%;
+        height: 20%;
+    }
+
+  </style>
+      <script>
+        function goToOthera(){
+            window.location.href = 'menu.html';
+        }
+        function goToOtherb(){
+            window.location.href = 'menu.html#about';
+        }
+        function goToOtherc(){
+            window.location.href = 'menu.html#Images';
+        }
+        function goToOtherd(){
+            window.location.href = 'menu.html#address';
+        }
+
+        function announceOpen(){
+                    announcement.style.display = "block";
+                    openB.style.display = "none";
+                    closeB.style.display = "block";
+                }
+
+
+        function announceClose(){
+                    announcement.style.display = "none";
+                    closeB.style.display = "none";
+                    openB.style.display = "block";
+                }
+
+
+    </script>
+
+</head>
+<body>
+
+  <nav class="n" id="nav">
+    <script>
+        function goToHome() {
+            window.location.href = 'index.html';
+        }
+        function closenav(){
+            nav.style.display = "none";
+        }
+    </script>
+    <img class="logo" src="photos/Untitled.jpg" alt="" onclick="goToHome()"><br>
+    <P class="head">RLS</P>
+    <span onclick="closenav()"><i class="fa-solid fa-xmark"></i></span>
+    <button type="button" onclick="goToOthera()"><i class="fa-solid fa-house"></i><p class="nav">Home</p></button>
+    <button type="button" onclick="goToOtherb()"><i class="fa-solid fa-newspaper"></i><p class="nav">News</p></button>
+    <button type="button" onclick="goToOtherc()"><i class="fa-solid fa-image"></i><p class="nav">Gallery</p></button>
+    <button type="button" onclick="goToOtherd()"><i class="fa-solid fa-address-book"></i><p class="nav">Contact</p></button>
+</nav>
+<div class="but">
+    <button type="button" onclick="announceOpen()" class="openB" id="openB"><i class="fa-solid fa-bell"></i></button>
+    <button type="button" onclick="announceClose()" class="closeB" id="closeB"><i class="fa-solid fa-xmark"></i></button>    
+</div>
+    <div class="announcement" id="announcement">
+        <h2><i class="fa-solid fa-bell"></i> <u>NOTIFICATIONS</u></h2>
+        <ol>
+            <li>The easiest way of checking result of the student of End-Term or Mid-Term press <i><a href="tel: *775*1# " style="color: rgb(255, 232, 132); text-decoration: none;">*775*1# </a></i> . </li>
+        </ol>
+    </div>
+
+    <div class="nave">
+      <script>
+        function goToHome() {
+            window.location.href = 'index.html';
+        }
+    </script>
+
+      <img class="logo" src="photos/Untitled.jpg" alt="" onclick="goToHome()">
+      <h1 class="head">RWAMAGANA LEADERS' SCHOOL</h1><br>
+      <p class="slogan">Where education is for life ...</p>
+      <h2 onclick="opennav()"><i class="fa-solid fa-bars"></i></h2>
+      <script>
+          function opennav(){
+              nav.style.display = "block";
+          }
+      </script>
+    </div>
+
+
+  <div class="timeline-container">
+    <h1>Our story (2005 - 2025)</h1>
+
+    <ul class="timeline">
+      <!-- 2005 -->
+      <li class="timeline-item">
+        <div class="timeline-year">2005</div>
+        <div class="timeline-content">
+          <h3>Discussion begin</h3>
+          <img src="photos/2005.jpg" alt="">
+          <ul>
+            <li>Following the 1994 Genocide, community leaders recognize that secondary education is their most pressing need.</li>
+            <li>An exploratory committee to consider a school is formed.</li>
+            <li>Different educational models are explored, particularly Expeditionary Learning (EL).</li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- 2006 -->
+      <li class="timeline-item">
+        <div class="timeline-year">2006</div>
+        <div class="timeline-content">
+          <h3>Fund raising</h3>
+          <img src="photos/2006.jpg" alt="">
+          <ul>
+            <li>Robin walks 60 miles in Virginia to raise the first funds for the school.</li>
+            <li>Lutheran leaders in Rwanda meet with Dr. Karl Smith, treasurer of the Sierra Pacific Synod (region of the Evangelical Lutheran Church in America—ELCA) and show him a site that would bring a school to their community.</li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- 2007 -->
+      <li class="timeline-item">
+        <div class="timeline-year">2007</div>
+        <div class="timeline-content">
+          <h3>Incorporation</h3>
+          <img src="photos/incoperation.jpg" alt="">
+          <ul>
+            <li>The Rwanda School Project incorporates as a non-profit 501(c)3 organization in the United States.  A North American governing board is formed. </li>
+            <li>Land for the school and the local congregation is purchased in Rwamagana through funding from Karl’s church, Bethlehem Lutheran in Santa Rosa, CA, and other donors.</li>
+            <li>Robin teaches a free English class in Rwamagana for 9 months.</li>
+            <li>Our first volunteers come to help and library books begin to arrive.</li>
+            <li>LCR and ELCA partner to support Robin as an ELCA missionary in education.</li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- 2008 -->
+      <li class="timeline-item">
+        <div class="timeline-year">2008</div>
+        <div class="timeline-content">
+          <h3>Recruiting Begins</h3>
+          <img src="photos/recruiting begins.jpg" alt="">
+          <ul>
+            <li>Dr. Elaine Kasimatis, Sacramento State University, volunteers for a year in Rwanda to help develop the school.</li>
+            <li>A committee of Rwandan leaders, including Lutheran Church of Rwanda members, begin to visit government offices and develop strategies for starting a school.</li>
+            <li>Robin and Elaine visit schools, architects and biogas sites. We offer teacher training and begin recruiting.</li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- 2009 -->
+      <li class="timeline-item">
+        <div class="timeline-year">2009</div>
+        <div class="timeline-content">
+          <h3>First Classes Start</h3>
+          <img src="https://rwandaschoolproject.org/wp-content/uploads/2014/08/Our-Story-003_-Robin-teaching.jpg" alt="">
+          <ul>
+            <li>With Moses Mufua and volunteer Jean Helmick to coordinate the office, we start an English Enrichment Program with a staff of 3 teachers in rented rooms at African Evangelical Enterprise and serve 23 students, all of whom have either stopped school or were disrupted from attending.</li>
+            <li>Lutheran Educational Development Association (LEDO) is formed as a non-profit in Rwanda to administer the school.</li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- 2010 -->
+      <li class="timeline-item">
+        <div class="timeline-year">2010</div>
+        <div class="timeline-content">
+          <h3>First Campus Building</h3>
+          <img src="https://rwandaschoolproject.org/wp-content/uploads/2014/08/Our-Story-004_-Completion-of-our-first-campus-building.jpg" alt="">
+          <ul>
+            <li>Licensed by the Ministry of Education, we start Secondary Form 1 (equivalent to 7th grade) with 23 students.</li>
+            <li>The first four rooms of our 10-room classroom building are completed in October and we move in. The building is completed by the end of the year.</li>
+            <li>Rwamagana Leaders' School is now open for business.</li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- 2011 -->
+      <li class="timeline-item">
+        <div class="timeline-year">2011</div>
+        <div class="timeline-content">
+          <h3>Kitchen Added</h3>
+          <img src="photos/kitchen added.jpg" alt="">
+          <ul>
+            <li>With help from Wheat Ridge Ministries and Rotary International, we build 10 latrines, renovate a small house for our kitchen and build a chicken project.</li>
+            <li>We have 43 students in grades S1 (7th grade) and S2 (8th grade) and 5 teachers; we hire a bookkeeper.</li>
+            <li>Four students are part of a Lutheran Youth Delegation that visits the USA for 2 weeks.</li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- 2012 -->
+      <li class="timeline-item">
+        <div class="timeline-year">2012</div>
+        <div class="timeline-content">
+          <h3>Dorms Added</h3>
+          <img src="photos/dorms added.jpg" alt="">
+          <ul>
+            <li>We build dormitory (Sorenson Hall) and Wheat Ridge funds two biogas digesters.</li>
+            <li>70 students in Grades S1, S2 and S3 (Grades 7-9) with 6 teachers.</li>
+            <li>All 16 of our Senior 3 students pass national exams and 80% are in Divisions I and II.</li>
+            <li>Peter Mutambarungu (our history teacher) and two students are invited to visit Silverton Public School in Colorado for a month to study, teach and learn with their EL program.</li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- 2013 -->
+      <li class="timeline-item">
+        <div class="timeline-year">2013</div>
+        <div class="timeline-content">
+          <h3>Cafeteria Added</h3>
+          <img src="photos/cafteria added.jpg" alt="">
+          <ul>
+            <li>With 86 students and 9 teachers, we begin our first A-Level combinations: History – Econ – Geography (HEG) and Math – Econ – Geography (MEG).</li>
+            <li>Our Parent Teacher Association is formed.</li>
+            <li>We build a school cafeteria (Kitao Hall).</li>
+            <li>We begin a partnership with Segal Family Foundation.</li>
+            <li>With the help of ELCA, we increase our water catchment and introduce a tutorial program.</li>
+            <li>All 28 of our Senior 3 students pass national exams, with 85% in Divisions I and II.</li>
+            <li>8 students attend Rwanda’s first international college recruiting fair in Kigali.</li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- 2014 -->
+      <li class="timeline-item">
+        <div class="timeline-year">2014</div>
+        <div class="timeline-content">
+          <h3>Science Building Added</h3>
+          <img src="photos/science building added.jpg" alt="">
+        </div>
+      </li>
+
+      <!-- 2015 -->
+      <li class="timeline-item">
+        <div class="timeline-year">2015</div>
+        <div class="timeline-content">
+          <h3>First Graduating Class</h3>
+          <img src="photos/first graduating class.jpg" alt="">
+          <ul>
+            <li>130 students were enrolled in Grades S1-S6 (Grades 7-12).</li>
+            <li>In January, we dedicated Kitao Hall (Cafeteria/Kitchen, completed in 2013), Sorensen Hall (Boys’ Dorm, completed in 2012), and Tally Labs (completed in 2014).</li>
+            <li>Celebrated the first graduating class of 16 students in November.</li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- 2016 -->
+      <li class="timeline-item">
+        <div class="timeline-year">2016</div>
+        <div class="timeline-content">
+          <h3>Girl's Dorm Built</h3>
+          <img src="photos/Girl's Dorm Built.jpg" alt="">
+          <ul>
+            <li>144 students with a staff of 20, including 13 teachers.</li>
+            <li>We built a 100 bed girls’ dormitory.</li>
+            <li>Established a LEARN. EMPOWER. LEAD. Fund to help in the transition from Rwamagana Leaders’ School to a university.</li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- 2017 -->
+      <li class="timeline-item">
+        <div class="timeline-year">2017</div>
+        <div class="timeline-content">
+          <h3>Networked Computer Lab</h3>
+          <img src="photos/networked computer lab.jpg" alt="">
+          <ul>
+            <li>137 students with a staff of 23, including 14 teachers.</li>
+            <li>Built a basketball court (sport court).</li>
+            <li>Digital Divide Project; announced a project to set up a networked lab consisting of 20 computer stations along with the solar panels to support the new equipment.</li>
+            <li>Pacifique Mucyo received a complete scholarship to the University of Nebraska-Lincoln. He competed with 2,000 other Rwandan applications to receive one of the 50 full scholarships that covers all tuition, books, living expenses, travel costs, and fees for a four-year bachelor’s degree. Upon completion, Pacifique will return to Rwanda and commit a minimum of five years of his career to advancing the Rwanda agricultural sector.</li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- 2018 -->
+      <li class="timeline-item">
+        <div class="timeline-year">2018</div>
+        <div class="timeline-content">
+          <h3>Solar Panels Added</h3>
+          <img src="photos/Solar Panels Added.jpg" alt="">
+          <ul>
+            <li>138 students with a staff of 30, including 14 (FTE) teachers.</li>
+            <li>Completed a computer lab and installed solar panels to give us electricity for more than one hour per day.</li>
+            <li>Adopted a five-year master plan to complete the campus building projects and to raise sustaining funds from individuals, churches, and foundations to support annual operating expenses commensurate with the anticipated annual growth.</li>
+            <li>Amani Simbayobewe, student speaker from our first graduating class formed a nonprofit foundation called Sheer Love  to help street kids in Rwanda. Many of our graduates are dedicated to giving back to raise the standard of living for their fellow Rwandans.</li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- 2019 -->
+      <li class="timeline-item">
+        <div class="timeline-year">2019</div>
+        <div class="timeline-content">
+          <h3>New Head of School</h3>
+          <img src="photos/New Head of School.jpeg" alt="">
+          <ul>
+            <li>164 students with a staff of 29, including 17 (FTE) teachers.</li>
+            <li>Changed the name of our school from Rwamagana Lutheran School to Rwamagana Leaders’ School. This name change was made to reflect the goals of our students to become leaders in Rwandan society. In Rwanda, use of the name Lutheran implies an ownership by the church, and even though we value our Lutheran heritage, we are not affiliated with the Lutheran Church of Rwanda.  This is a name change, but not a change in our direction or philosophy. We continue as a Christian school with Lutheran values while at the same time proclaiming the nature of our students as leaders.</li>
+            <li>Robin Strickler, our founder, retired.  The classroom building was named Founders Hall in her honor.</li>
+            <li>Hired Moses Ssenyonjo as our second Head of School.</li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- 2020 -->
+      <li class="timeline-item">
+        <div class="timeline-year">2020</div>
+        <div class="timeline-content">
+          <h3>COVID Relief Offered</h3>
+          <img src="photos/COVID Relief Offered.jpg" alt="">
+          <ul>
+            <li>189 students with a staff of 29, including 17 (FTE) teachers.</li>
+            <li>We connected to a public water source.</li>
+            <li>We connected to the Rwanda electric grid.</li>
+            <li>We begin a partnership with CG Foundation.</li>
+            <li>On March 14, 2020 our campus closed due to the coronavirus. As a result we:
+              <ol>
+                <li>decided to continue to support our teachers and staff;</li>
+                <li>donated $1,000 to help with the government food distribution;</li>
+                <li>spent over $10,000 to distributed over food bags to families of our students and families in Rwamagana.</li>
+              </ol>
+            </li>
+            <li>Because of the closing of all schools in Rwanda, the school year was changed from January to September.</li>
+            <li>Rwamagana Leaders’ School reopened in September as a matter of safety was opened only for boarding students.</li>
+            <li>During the closure, 60-beds were added to Sorensen Hall so that we now have two 100-bed dormitories. School reopened as a boarding-only school.</li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- 2021 - 2022 -->
+      <li class="timeline-item">
+        <div class="timeline-year">2021 - 2022</div>
+        <div class="timeline-content">
+          <h3>New Academic Calendar</h3>
+          <img src="photos/New Academic Calendar.jpg" alt="">
+          <ul>
+            <li>216 students with a staff of 35, including 17 teachers.</li>
+            <li>Converted to October-July school year with three sessions, to be consistent with the other world-wide academic institutions. The school years now cover two calendar years.</li>
+            <li>Added a third lab classroom, which allows us to add additional combinations. We now offer nine combinations of math, physics, chemistry, biology, computer science, geography, history, economics, and literature.</li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- 2022 - 2023 -->
+      <li class="timeline-item">
+        <div class="timeline-year">2022 - 2023</div>
+        <div class="timeline-content">
+          <h3>Campus complete</h3>
+          <img src="photos/Campus complete.jpg" alt="">
+          <p>In 2023, the first phase of development is completed with 10 buildings.</p>
+          <ul>
+            <li>241 students with a staff of 43, including 24 teachers.</li>
+            <li>Added an administration building, which freed up three classrooms in Founder's Hall, which allowed us to increase the number of classroom classes offered.  Teachers now have office and meeting space, along with a much needed health clinic.</li>
+            <li>Opened a library, which has the capacity to display 4,000 books, giving student creative and mezzanine areas.</li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- 2023 - 2024 -->
+      <li class="timeline-item">
+        <div class="timeline-year">2023 - 2024</div>
+        <div class="timeline-content">
+          <h3>Reaching Out</h3>
+          <img src="photos/Reaching Out.jpg" alt="">
+          <ul>
+            <li>Enrolled our first disabled student.</li>
+            <li>Remodeled campus to make it wheelchair accessible.</li>
+            <li>Hosted a University Fair where over 1,900 students and several universities came to our campus to learn about higher education possibilities.</li>
+            <li>President Kagame and the First Lady presented a computer to each member the RLS' robotics team. Over 100 school were given robot kits and then spent six months preparing for the intense competition.</li>
+            <li>Established a permanent Endowment Fund. It absorbed the LEARN. EMPOWER. LEAD. Fund.</li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- 2024 - 2025 -->
+      <li class="timeline-item">
+        <div class="timeline-year">2024 - 2025</div>
+        <div class="timeline-content">
+          <h3>15-Year Vision</h3>
+          <img src="photos/15-Year Vision.jpeg" alt="">
+          <p>2025 Campus</p>
+          <ul>
+            <li>We have BIG PLANS with two goals:
+              <ol>
+                <li>BE THE BEST -- Become a preeminent secondary school in Rwanda.</li>
+                <li>DOUBLE IN SIZE -- Grow from 200 to 400 boarding students.</li>
+              </ol>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+
+  
+
+</body>
+</html>
