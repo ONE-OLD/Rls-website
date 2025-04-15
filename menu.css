@@ -669,6 +669,7 @@ h5{
     background-color: #00000000;
     border-radius: 10px;
     color: whitesmoke;
+    font-size: 100%;
 }
 .comb1,.comb2{
     background-color: #0000008f;
@@ -1046,6 +1047,7 @@ h5{
         font-size: 10px;
         margin-left: 0%;
     }
+
     .olevel,.alevel{
         margin-left: 1%;
     }
@@ -1053,8 +1055,10 @@ h5{
         z-index: 1000;
     }
     .comb1,.comb2{
-        height: 3cm;
-        width: 4cm;
+        height: 2.5cm;
+        width: 3.5cm;
     }
-    
+    .h,.pa{
+        font-size: 70%;
+    }
 }
