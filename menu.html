@@ -8,6 +8,97 @@
     <link rel="icon" href="photos/Untitled.jpg">
 
     <title>Rwamagana Leaders' School</title>
+    <style>
+        .section { display: none; margin-left: 1.5cm; text-align: center; }
+        .active { display: block; }
+        #fullImg {
+            transform: scale(1); /* Default scale */
+            transform-origin: center center; /* Center zoom */
+            transition: transform 0.3s ease; /* Smooth transition */
+            width: 600px;
+            margin: 50px auto;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .zoomin {
+            border: none;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.534);
+            color: #ffffff;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 20px;
+            z-index: 1000;
+        }
+
+        .zoomin:hover{
+            color: #969696;
+        }
+
+        .zoomout{
+            border: none;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.534);
+            color: #ffffff;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 20px;
+            z-index: 1000;
+        }
+        .zoomout:hover{
+            color: #969696;
+        }
+
+        /* Optional: Disable button styles */
+        .zoomout:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+        .zoomin:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+        /* Loader Animation Styles */
+        .loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100000;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader {
+            border: 8px solid #000000;
+            border-top: 8px solid rgb(0, 255, 13);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loader-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
     <script>
         // JavaScript function to handle navigation
         function navigate(pageId) {
