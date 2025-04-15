@@ -709,7 +709,7 @@ h5{
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 600px) {
     .home1{
         margin-left: 0%;
     }
@@ -790,6 +790,7 @@ h5{
         display: block;
         height: 0;
         text-align: center;
+        font-size: 14px;
     }
     .nave .slogan{
         display: block;
@@ -1040,9 +1041,13 @@ h5{
     }
     .s,.comb11,.comb22,.comb33,.comb44,.comb55,.comb66,.comb77,.comb88{
         margin-top: 1cm;
-        height: 3cm;
-        width: 4cm;
+        height: 2.5cm;
+        width: 3.5cm;
         font-size: 10px;
+        margin-left: 0%;
+    }
+    .olevel,.alevel{
+        margin-left: 1%;
     }
     .announcement,.but{
         z-index: 1000;
